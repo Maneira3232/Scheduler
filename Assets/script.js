@@ -4,10 +4,12 @@ $("#currentDay").text(date)
 
 var timeBlock = $(".time-block")
 var currentTime = moment().hours()
+//console.log(currentTime)
 
 function setColor() {
     timeBlock.each(function () {
-        var hour = $(this).attr("id")
+        var hour = $(this).attr("id").split("-")[1]
+        //console.log(hour)
         if (currentTime > hour) {
             $(this).addClass("past")
         }
@@ -31,14 +33,14 @@ $(".saveBtn").on("click", function () {
     localStorage.setItem(time, value)
 })
 
-$("#hour9").val(localStorage.getItem('9'))
-$("#hour10").val(localStorage.getItem('10'))
-$("#hour11").val(localStorage.getItem('11'))
-$("#hour12").val(localStorage.getItem('12'))
-$("#hour13").val(localStorage.getItem('13'))
-$("#hour14").val(localStorage.getItem('14'))
-$("#hour15").val(localStorage.getItem('15'))
-$("#hour16").val(localStorage.getItem('16'))
-$("#hour17").val(localStorage.getItem('17'))
+$("#hour-9").val(localStorage.getItem('9'))
+$("#hour-10").val(localStorage.getItem('10'))
+$("#hour-11").val(localStorage.getItem('11'))
+$("#hour-12").val(localStorage.getItem('12'))
+$("#hour-13").val(localStorage.getItem('13'))
+$("#hour-14").val(localStorage.getItem('14'))
+$("#hour-15").val(localStorage.getItem('15'))
+$("#hour-16").val(localStorage.getItem('16'))
+$("#hour-17").val(localStorage.getItem('17'))
 
 setColor()
